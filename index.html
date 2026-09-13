@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2D8C87">
+  <title>小暖陪伴 · 子女端</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="home">
+  <div class="showcase">
+    <aside class="side-panel">
+      <div class="brand-logo">暖</div>
+      <h1>小暖陪伴</h1>
+      <p class="slogan">让远方的牵挂，变成身边的陪伴。<br>子女端 H5 Demo · 守护王秀兰奶奶</p>
+      <div class="feat-list">
+        <span class="chip">❤️ AI 健康预警</span>
+        <span class="chip">💬 每日温情陪伴</span>
+        <span class="chip">🎤 远程语音关怀</span>
+        <span class="chip">📋 家庭档案管理</span>
+      </div>
+      <div class="quick-links">
+        <a href="index.html" data-active="true">🏠 首页纵览</a>
+        <a href="care.html">💛 关怀陪伴</a>
+        <a href="records.html">📈 健康记录</a>
+        <a href="me.html">👤 我的档案</a>
+      </div>
+      <p class="ends-label">三端联调</p>
+      <div class="quick-links">
+        <a href="elder.html" target="_blank" rel="noopener">👵 老人端</a>
+        <a href="console.html" target="_blank" rel="noopener">🖥️ 操作台</a>
+      </div>
+      <p class="tip">点按手机右下角 <b>「演示台」</b>，可模拟心率异常、摔倒检测等预警场景；建议同时打开「老人端」「操作台」标签页，体验三端实时联动。演示数据支持跨页面同步与重置。</p>
+    </aside>
+
+    <div class="phone">
+      <div class="statusbar"><span id="sbClock">15:30</span><span>📶 🔋 88%</span></div>
+
+      <div class="screens">
+        <!-- 首页 -->
+        <div class="screen" id="screen-home">
+          <h1 class="visually-hidden">小暖陪伴 · 子女端 H5 演示 v2</h1>
+
+          <!-- 老人信息 Hero -->
+          <section class="home-hero">
+            <div class="elder-info">
+              <a class="hero-link" href="me.html" aria-label="查看老人档案">
+                <div class="av">👵</div>
+                <div>
+                  <div class="nm">王秀兰 奶奶 <span class="go">›</span></div>
+                  <div class="ds">72岁 · 在线 · 今日活动量 3,200步</div>
+                </div>
+              </a>
+            </div>
+            <div class="stat-row">
+              <span class="stat-chip">⌚ 手环已同步</span>
+              <span class="stat-chip">📹 客厅摄像头在线</span>
+              <span class="stat-chip">🤖 小暖已陪伴128天</span>
+            </div>
+          </section>
+
+          <!-- 顶部预警 -->
+          <div class="alert-top red" id="alertBanner" data-action="alert-open" role="button" tabindex="0">
+            <span class="ico">⚠️</span>
+            <span class="txt" id="alertBannerText">奶奶心率异常 128次/分<br><small style="font-weight:500;opacity:.8">15:05 触发 · 已处理</small></span>
+            <span class="arrow">›</span>
+          </div>
+
+          <!-- AI 每日小结 -->
+          <section class="ai-summary-card">
+            <div class="brief-head">🤖 小暖今日小结</div>
+            <p class="brief-text">奶奶今天 <b>整体状态良好</b>。下午心率出现一次异常升高（128次/分），小暖已安抚并通知家属。傍晚奶奶在沙发发呆，小暖主动关怀后情绪好转。今日共陪伴对话 <b>4 次</b>，建议周末视频时多关心奶奶。</p>
+          </section>
+
+          <!-- 实时检测 -->
+          <section class="card">
+            <h3>📊 实时检测 <span class="tag">每 5 分钟更新</span></h3>
+            <div class="detection-grid" id="detectionGrid">
+              <div class="det-item" data-action="det-toast" data-toast="❤️ 心率 76 次/分 · 刚刚同步（正常范围 60-100）">
+                <div class="det-head"><span class="det-icon">❤️</span><span class="det-name">心率</span><span class="det-status" id="hrStatus">正常</span></div>
+                <div class="det-value" id="hrValue">76</div>
+                <div class="det-unit">次/分</div>
+                <div class="det-time">刚刚</div>
+              </div>
+              <div class="det-item" data-action="det-toast" data-toast="🩺 血压 135/82 mmHg · 连续偏高，注意监测">
+                <div class="det-head"><span class="det-icon">🩺</span><span class="det-name">血压</span><span class="det-status watch" id="bpStatus">偏高</span></div>
+                <div class="det-value warn" id="bpValue">135/82</div>
+                <div class="det-unit">mmHg</div>
+                <div class="det-time">10 分钟前</div>
+              </div>
+              <div class="det-item" data-action="det-toast" data-toast="🫁 血氧 97% · 状态良好（正常 ≥95%）">
+                <div class="det-head"><span class="det-icon">🫁</span><span class="det-name">血氧</span><span class="det-status" id="spo2Status">正常</span></div>
+                <div class="det-value" id="spo2Value">97</div>
+                <div class="det-unit">%</div>
+                <div class="det-time">刚刚</div>
+              </div>
+              <div class="det-item" data-action="det-toast" data-toast="🚶 今日活动量 3,200 步 · 已达标（目标 3,000）">
+                <div class="det-head"><span class="det-icon">🚶</span><span class="det-name">活动</span><span class="det-status" id="stepStatus">达标</span></div>
+                <div class="det-value" id="stepValue">3,200</div>
+                <div class="det-unit">步</div>
+                <div class="det-time">今日累计</div>
+              </div>
+              <div class="det-item" data-action="det-toast" data-toast="😴 昨夜睡眠 7.2 小时 · 深睡 2.1 小时">
+                <div class="det-head"><span class="det-icon">😴</span><span class="det-name">睡眠</span><span class="det-status" id="sleepStatus">良好</span></div>
+                <div class="det-value" id="sleepValue">7.2</div>
+                <div class="det-unit">小时</div>
+                <div class="det-time">昨夜</div>
+              </div>
+              <div class="det-item" data-action="det-toast" data-toast="📹 客厅摄像头在线 · 实时画面正常">
+                <div class="det-head"><span class="det-icon">📹</span><span class="det-name">摄像头</span><span class="det-status" id="camStatus">在线</span></div>
+                <div class="det-value" id="camValue">正常</div>
+                <div class="det-unit">客厅</div>
+                <div class="det-time">实时</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- AI 风险提示 -->
+          <section class="risk-card">
+            <h3>💡 AI风险提示</h3>
+            <div class="risk-item">
+              <span class="ri-ico">🔴</span>
+              <span>今日15:05心率异常达128次/分，虽已恢复，建议 <b>关注近3天心率趋势</b>，必要时就医检查。</span>
+            </div>
+            <div class="risk-item">
+              <span class="ri-ico">🟡</span>
+              <span>血压135/82偏高，连续3天高于130，建议 <b>减少盐分摄入</b> 并注意监测。</span>
+            </div>
+          </section>
+
+          <!-- 远程关怀 -->
+          <button class="remote-btn-single" data-action="remote-open">
+            <span class="ic">🎤</span>
+            <span>一键发送语音关怀</span>
+            <span class="arrow-r">›</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 底部导航 -->
+      <nav class="tabbar" aria-label="主导航">
+        <a href="index.html" data-active="true" aria-current="page" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>首页</span>
+        </a>
+        <a href="care.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span>关怀</span>
+        </a>
+        <a href="records.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          <span>记录</span>
+        </a>
+        <a href="me.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>我的</span>
+        </a>
+      </nav>
+
+      <!-- 演示浮动按钮 -->
+      <button class="demo-fab" data-action="demo-toggle">🎬 演示台</button>
+
+      <!-- 演示控制台 -->
+      <div class="demo-panel" id="demoPanel" data-action="overlay-close">
+        <div class="demo-sheet">
+          <h2>🎬 演示控制台</h2>
+          <p class="sub">模拟老人端检测到异常，子女端实时收到预警</p>
+          <button class="demo-btn red" data-action="scenario-heart">
+            <b>🔴 场景一：心率异常（128次/分）</b>
+            <span>老人端弹出安抚 → 子女端首页红色预警 → 弹层展示 AI 通知链路</span>
+          </button>
+          <button class="demo-btn red" data-action="scenario-fall">
+            <b>🔴 场景二：摔倒检测</b>
+            <span>老人端询问是否需要帮助 → 子女端收到紧急预警</span>
+          </button>
+          <button class="demo-btn red" data-action="scenario-bp">
+            <b>🟠 场景三：血压偏高（158/95）</b>
+            <span>老人端提醒静坐 → 子女端检测卡片变红</span>
+          </button>
+          <button class="demo-btn" data-action="scenario-conv">
+            <b>💬 场景四：新对话记录</b>
+            <span>陪伴页出现一条新对话，带心情标签和AI分析</span>
+          </button>
+          <button class="demo-btn" data-action="scenario-alert">
+            <b>🟠 场景五：新增预警记录</b>
+            <span>健康页预警记录新增一条异常事件</span>
+          </button>
+          <button class="demo-btn red" data-action="reset-demo">
+            <b>↺ 重置演示数据</b>
+            <span>恢复初始状态</span>
+          </button>
+          <button class="demo-close" data-action="demo-close">关 闭</button>
+        </div>
+      </div>
+
+      <!-- 红色预警弹层 -->
+      <div class="alert-overlay" id="alertOverlay" data-action="overlay-close">
+        <div class="alert-box">
+          <div class="ico" id="alertIcon">❤️‍🔥</div>
+          <h2 id="alertTitle">严重预警</h2>
+          <div class="hr" id="alertBody">奶奶心率 <b>128</b> 次/分</div>
+          <p class="alt-time" id="alertTime">15:05 触发 · 已超时 5 分钟</p>
+          <ol class="steps">
+            <li><span class="n">1</span><span>小暖正在安抚奶奶，指导静坐深呼吸</span></li>
+            <li><span class="n">2</span><span>AI 已自动拨打您和建国电话，未接听</span></li>
+            <li><span class="n">3</span><span>已发送短信通知</span></li>
+            <li><span class="n">4</span><span>请立即处理！</span></li>
+          </ol>
+          <div class="call-note">
+            📞 已尝试联系主要 + 次级联系人（均未接听）<br>
+            ⏰ 即将升级至兜底联系人：朝阳区社区医院
+          </div>
+          <div class="actions">
+            <button class="call" data-action="call-open">📞 查看 AI 电话通知流程</button>
+            <button class="ok-btn" data-action="alert-ok">✅ 我已联系奶奶，处理完毕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI 电话流程弹层 -->
+      <div class="ai-call-modal" id="aiCallModal" data-action="overlay-close">
+        <div class="ai-call-box">
+          <h2>📞 AI 电话通知流程</h2>
+          <p class="sub">严重预警自动触发 · 按层级拨打紧急联系人</p>
+          <ol class="call-flow">
+            <li><span class="step done">1</span><span class="step-text">主要联系人 丁嘉怡</span><span class="step-status">未接听</span></li>
+            <li><span class="step done">2</span><span class="step-text">次级联系人 丁建国</span><span class="step-status">未接听</span></li>
+            <li><span class="step active" id="callStep3">3</span><span class="step-text">兜底 朝阳区社区医院</span><span class="step-status" id="callStatus3">待拨打</span></li>
+          </ol>
+          <p class="call-status" id="callStatus">⏳ 正在拨打中……</p>
+          <button class="close-btn" data-action="call-close">关 闭</button>
+        </div>
+      </div>
+
+      <!-- 远程关怀底部弹层 -->
+      <div class="remote-sheet" id="remoteSheet" data-action="overlay-close">
+        <div class="inner">
+          <div id="remoteList">
+            <h3>🎤 远程语音关怀</h3>
+            <p class="sub">录制一段语音，小暖会在奶奶端播放给奶奶听</p>
+            <button class="remote-item" data-action="remote-record">
+              <span class="ic">🎤</span>
+              <div class="txt">
+                <div class="t">录制语音留言</div>
+                <div class="s">录制一段语音，小暖会在老人端播放给奶奶听</div>
+              </div>
+              <span class="go">›</span>
+            </button>
+            <button class="remote-item" data-action="remote-medicine">
+              <span class="ic">💊</span>
+              <div class="txt">
+                <div class="t">提醒奶奶吃药</div>
+                <div class="s">小暖会在老人端语音提醒：「奶奶，降压药时间到啦」</div>
+              </div>
+              <span class="go">›</span>
+            </button>
+            <button class="remote-item" data-action="remote-ask">
+              <span class="ic">💬</span>
+              <div class="txt">
+                <div class="t">让小暖问问奶奶情况</div>
+                <div class="s">小暖主动开口：「嘉怡想您啦，让我问问您今天怎么样？」</div>
+              </div>
+              <span class="go">›</span>
+            </button>
+            <button class="close-btn" data-action="remote-close">取 消</button>
+          </div>
+          <div class="recorder-view" id="recorderView" hidden>
+            <h3>🎙️ 录制语音留言</h3>
+            <p class="sub">录好后发送，小暖会在奶奶端播放</p>
+            <div class="rec-wave" id="recWave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <button class="rec-mic" id="recMic" data-action="rec-toggle" aria-label="开始或停止录音">🎤</button>
+            <div class="rec-timer" id="recTimer">0:00</div>
+            <div class="rec-hint" id="recHint">点击麦克风开始录音</div>
+            <div class="rec-actions">
+              <button class="rec-btn secondary" id="recPlay" data-action="rec-play" disabled>▶ 试听</button>
+              <button class="rec-btn secondary" id="recRedo" data-action="rec-redo" disabled>↺ 重录</button>
+            </div>
+            <div class="rec-actions">
+              <button class="rec-btn primary" id="recSend" data-action="rec-send" disabled>发送给奶奶</button>
+            </div>
+            <button class="close-btn" data-action="remote-close">取 消</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast -->
+      <div class="toast-wrap" id="toastWrap"></div>
+    </div>
+  </div>
+
+  <script src="assets/bridge.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

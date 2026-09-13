@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2D8C87">
+  <title>记录 · 小暖子女端</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="records">
+  <div class="showcase">
+    <aside class="side-panel">
+      <div class="brand-logo">暖</div>
+      <h1>小暖陪伴</h1>
+      <p class="slogan">让远方的牵挂，变成身边的陪伴。<br>子女端 H5 Demo · 守护王秀兰奶奶</p>
+      <div class="feat-list">
+        <span class="chip">❤️ AI 健康预警</span>
+        <span class="chip">💬 每日温情陪伴</span>
+        <span class="chip">🎤 远程语音关怀</span>
+        <span class="chip">📋 家庭档案管理</span>
+      </div>
+      <div class="quick-links">
+        <a href="index.html">🏠 首页纵览</a>
+        <a href="care.html">💛 关怀陪伴</a>
+        <a href="records.html" data-active="true">📈 健康记录</a>
+        <a href="me.html">👤 我的档案</a>
+      </div>
+      <p class="ends-label">三端联调</p>
+      <div class="quick-links">
+        <a href="elder.html" target="_blank" rel="noopener">👵 老人端</a>
+        <a href="console.html" target="_blank" rel="noopener">🖥️ 操作台</a>
+      </div>
+      <p class="tip">点按手机右下角 <b>「演示台」</b>，可模拟心率异常、摔倒检测等预警场景，预警记录实时新增；建议同时打开老人端与操作台体验三端联动。</p>
+    </aside>
+
+    <div class="phone">
+      <div class="statusbar"><span id="sbClock">15:30</span><span>📶 🔋 88%</span></div>
+
+      <div class="screens">
+        <!-- 记录页 -->
+        <div class="screen" id="screen-records">
+          <h1 class="visually-hidden">健康记录</h1>
+
+          <!-- 24小时心率趋势 -->
+          <section class="card">
+            <h3>❤️ 24小时心率趋势 <span class="tag">今日</span></h3>
+            <div class="chart-box">
+              <svg viewBox="0 0 360 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="24小时心率趋势折线图，15:05出现异常峰值128次/分">
+                <defs>
+                  <linearGradient id="hrArea" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2D8C87" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#2D8C87" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <!-- 背景网格 -->
+                <line x1="30" y1="130" x2="340" y2="130" stroke="#E3EEED" stroke-width="1"/>
+                <line x1="30" y1="95" x2="340" y2="95" stroke="#E3EEED" stroke-width="1"/>
+                <line x1="30" y1="60" x2="340" y2="60" stroke="#E3EEED" stroke-width="1"/>
+                <line x1="30" y1="25" x2="340" y2="25" stroke="#E3EEED" stroke-width="1"/>
+                <!-- 预警线 100 -->
+                <line x1="30" y1="45" x2="340" y2="45" stroke="#E25C4A" stroke-width="1.5" stroke-dasharray="5,4"/>
+                <text x="345" y="49" fill="#E25C4A" font-size="10" font-weight="700">预警线 100</text>
+                <!-- 心率面积 -->
+                <polygon class="chart-area" points="30,115 70,105 110,100 150,90 190,95 230,45 270,55 310,95 340,100 340,130 30,130" fill="url(#hrArea)"/>
+                <!-- 心率折线 -->
+                <polyline class="chart-line" points="30,115 70,105 110,100 150,90 190,95 230,45 270,55 310,95 340,100" fill="none" stroke="#2D8C87" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- 数据点 -->
+                <circle class="chart-point" cx="230" cy="45" r="5" fill="#E25C4A" stroke="#fff" stroke-width="2"/>
+                <circle class="chart-point p2" cx="270" cy="55" r="4" fill="#2D8C87" stroke="#fff" stroke-width="2"/>
+                <!-- 轴标签 -->
+                <text x="25" y="148" fill="#6A8183" font-size="10" text-anchor="middle">00:00</text>
+                <text x="120" y="148" fill="#6A8183" font-size="10" text-anchor="middle">08:00</text>
+                <text x="230" y="148" fill="#6A8183" font-size="10" text-anchor="middle">15:05</text>
+                <text x="335" y="148" fill="#6A8183" font-size="10" text-anchor="middle">23:59</text>
+                <!-- 峰值标注 -->
+                <text x="230" y="32" fill="#E25C4A" font-size="10" font-weight="700" text-anchor="middle">128</text>
+              </svg>
+              <div class="legend">
+                <span><i style="background:#2D8C87"></i>心率</span>
+                <span><i style="background:#E25C4A"></i>异常峰值</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 今日行为时间轴 -->
+          <section class="card">
+            <h3>📅 今日行为时间轴</h3>
+            <ul class="behavior-timeline">
+              <li><span class="tt">06:40</span>起床，小暖问候早安</li>
+              <li><span class="tt">07:10</span>晨练太极 20 分钟</li>
+              <li><span class="tt">07:45</span>早餐：粥 + 鸡蛋</li>
+              <li><span class="tt">08:30</span>浇花、收拾房间</li>
+              <li><span class="tt">10:00</span>小区散步 30 分钟</li>
+              <li><span class="tt">12:05</span>午餐，食欲正常</li>
+              <li class="ok"><span class="tt">12:35</span>吃药（降压药）✅</li>
+              <li><span class="tt">13:30</span>午休 40 分钟</li>
+              <li class="warn"><span class="tt">15:05</span>⚠️ 心率异常 128次/分</li>
+              <li><span class="tt">15:20</span>心率恢复正常</li>
+              <li><span class="tt">16:00</span>看京剧节目（电视）</li>
+              <li class="warn"><span class="tt">18:00</span>🟡 沙发发呆（电视未开）</li>
+              <li><span class="tt">18:10</span>小暖关怀后情绪好转</li>
+              <li><span class="tt">18:30</span>晚餐</li>
+              <li><span class="tt">20:15</span>晚间陪聊，心情开心</li>
+            </ul>
+          </section>
+
+          <!-- 近7天预警记录 -->
+          <section class="card">
+            <h3>🚨 近7天预警记录</h3>
+            <div id="alertList">
+              <div class="alert-card red">
+                <span class="ico">🔴</span>
+                <div class="txt">
+                  <div class="t">今天 15:05 · 心率 128 次/分</div>
+                  <div class="s">严重预警，AI已自动通知家属并安抚老人</div>
+                  <span class="process done">✅ 已处理</span>
+                </div>
+              </div>
+              <div class="alert-card orange">
+                <span class="ico">🟠</span>
+                <div class="txt">
+                  <div class="t">昨天 14:20 · 心率连续偏高</div>
+                  <div class="s">连续3天心率峰值超过100次/分，建议关注</div>
+                  <span class="process done">✅ 已关注</span>
+                </div>
+              </div>
+              <div class="alert-card orange">
+                <span class="ico">🟠</span>
+                <div class="txt">
+                  <div class="t">3天前 09:30 · 血压偏高</div>
+                  <div class="s">血压 142/88 mmHg，超出正常范围</div>
+                  <span class="process done">✅ 已提醒</span>
+                </div>
+              </div>
+              <div class="alert-card orange">
+                <span class="ico">🟠</span>
+                <div class="txt">
+                  <div class="t">5天前 18:15 · 发呆异常</div>
+                  <div class="s">摄像头检测到长时间发呆，小暖已关怀</div>
+                  <span class="process done">✅ 已安抚</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 预警分级说明 -->
+          <section class="level-card">
+            <h3>📋 预警分级说明</h3>
+            <div class="level-row">
+              <span class="level-dot red"></span>
+              <div>
+                <strong>严重预警（红色）</strong><br>
+                心率&gt;120、血氧&lt;90%、跌倒检测等紧急情况 → AI电话+短信通知全部联系人
+              </div>
+            </div>
+            <div class="level-row">
+              <span class="level-dot orange"></span>
+              <div>
+                <strong>注意提醒（橙色）</strong><br>
+                心率/血压连续偏高、活动量骤降、发呆异常等 → 应用内推送提醒
+              </div>
+            </div>
+            <div class="level-row">
+              <span class="level-dot green"></span>
+              <div>
+                <strong>正常记录（绿色）</strong><br>
+                日常数据记录、吃药提醒、轻度异常等 → 只记录不打扰
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- 底部导航 -->
+      <nav class="tabbar" aria-label="主导航">
+        <a href="index.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>首页</span>
+        </a>
+        <a href="care.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span>关怀</span>
+        </a>
+        <a href="records.html" data-active="true" aria-current="page" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          <span>记录</span>
+        </a>
+        <a href="me.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>我的</span>
+        </a>
+      </nav>
+
+      <!-- 演示浮动按钮 -->
+      <button class="demo-fab" data-action="demo-toggle">🎬 演示台</button>
+
+      <!-- 演示控制台 -->
+      <div class="demo-panel" id="demoPanel" data-action="overlay-close">
+        <div class="demo-sheet">
+          <h2>🎬 演示控制台</h2>
+          <p class="sub">模拟老人端检测到异常，子女端实时收到预警</p>
+          <button class="demo-btn red" data-action="scenario-heart">
+            <b>🔴 场景一：心率异常（128次/分）</b>
+            <span>老人端弹出安抚 → 子女端首页红色预警 → 弹层展示 AI 通知链路</span>
+          </button>
+          <button class="demo-btn red" data-action="scenario-fall">
+            <b>🔴 场景二：摔倒检测</b>
+            <span>老人端询问是否需要帮助 → 子女端收到紧急预警</span>
+          </button>
+          <button class="demo-btn red" data-action="scenario-bp">
+            <b>🟠 场景三：血压偏高（158/95）</b>
+            <span>老人端提醒静坐 → 子女端检测卡片变红</span>
+          </button>
+          <button class="demo-btn" data-action="scenario-conv">
+            <b>💬 场景四：新对话记录</b>
+            <span>陪伴页出现一条新对话，带心情标签和AI分析</span>
+          </button>
+          <button class="demo-btn" data-action="scenario-alert">
+            <b>🟠 场景五：新增预警记录</b>
+            <span>本页预警记录新增一条异常事件</span>
+          </button>
+          <button class="demo-btn red" data-action="reset-demo">
+            <b>↺ 重置演示数据</b>
+            <span>恢复初始状态</span>
+          </button>
+          <button class="demo-close" data-action="demo-close">关 闭</button>
+        </div>
+      </div>
+
+      <!-- 红色预警弹层 -->
+      <div class="alert-overlay" id="alertOverlay" data-action="overlay-close">
+        <div class="alert-box">
+          <div class="ico" id="alertIcon">❤️‍🔥</div>
+          <h2 id="alertTitle">严重预警</h2>
+          <div class="hr" id="alertBody">奶奶心率 <b>128</b> 次/分</div>
+          <p class="alt-time" id="alertTime">15:05 触发 · 已超时 5 分钟</p>
+          <ol class="steps">
+            <li><span class="n">1</span><span>小暖正在安抚奶奶，指导静坐深呼吸</span></li>
+            <li><span class="n">2</span><span>AI 已自动拨打您和建国电话，未接听</span></li>
+            <li><span class="n">3</span><span>已发送短信通知</span></li>
+            <li><span class="n">4</span><span>请立即处理！</span></li>
+          </ol>
+          <div class="call-note">
+            📞 已尝试联系主要 + 次级联系人（均未接听）<br>
+            ⏰ 即将升级至兜底联系人：朝阳区社区医院
+          </div>
+          <div class="actions">
+            <button class="call" data-action="call-open">📞 查看 AI 电话通知流程</button>
+            <button class="ok-btn" data-action="alert-ok">✅ 我已联系奶奶，处理完毕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI 电话流程弹层 -->
+      <div class="ai-call-modal" id="aiCallModal" data-action="overlay-close">
+        <div class="ai-call-box">
+          <h2>📞 AI 电话通知流程</h2>
+          <p class="sub">严重预警自动触发 · 按层级拨打紧急联系人</p>
+          <ol class="call-flow">
+            <li><span class="step done">1</span><span class="step-text">主要联系人 丁嘉怡</span><span class="step-status">未接听</span></li>
+            <li><span class="step done">2</span><span class="step-text">次级联系人 丁建国</span><span class="step-status">未接听</span></li>
+            <li><span class="step active" id="callStep3">3</span><span class="step-text">兜底 朝阳区社区医院</span><span class="step-status" id="callStatus3">待拨打</span></li>
+          </ol>
+          <p class="call-status" id="callStatus">⏳ 正在拨打中……</p>
+          <button class="close-btn" data-action="call-close">关 闭</button>
+        </div>
+      </div>
+
+      <!-- Toast -->
+      <div class="toast-wrap" id="toastWrap"></div>
+    </div>
+  </div>
+
+  <script src="assets/bridge.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

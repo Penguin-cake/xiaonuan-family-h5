@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2D8C87">
+  <title>我的 · 小暖子女端</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="me">
+  <div class="showcase">
+    <aside class="side-panel">
+      <div class="brand-logo">暖</div>
+      <h1>小暖陪伴</h1>
+      <p class="slogan">让远方的牵挂，变成身边的陪伴。<br>子女端 H5 Demo · 守护王秀兰奶奶</p>
+      <div class="feat-list">
+        <span class="chip">❤️ AI 健康预警</span>
+        <span class="chip">💬 每日温情陪伴</span>
+        <span class="chip">🎤 远程语音关怀</span>
+        <span class="chip">📋 家庭档案管理</span>
+      </div>
+      <div class="quick-links">
+        <a href="index.html">🏠 首页纵览</a>
+        <a href="care.html">💛 关怀陪伴</a>
+        <a href="records.html">📈 健康记录</a>
+        <a href="me.html" data-active="true">👤 我的档案</a>
+      </div>
+      <p class="ends-label">三端联调</p>
+      <div class="quick-links">
+        <a href="elder.html" target="_blank" rel="noopener">👵 老人端</a>
+        <a href="console.html" target="_blank" rel="noopener">🖥️ 操作台</a>
+      </div>
+      <p class="tip">本页可管理老人档案、家庭成员与小暖人设；人设选择、爱好标签与通知开关均保存在本地，跨页面生效。建议同时打开老人端与操作台体验三端联动。</p>
+    </aside>
+
+    <div class="phone">
+      <div class="statusbar"><span id="sbClock">15:30</span><span>📶 🔋 88%</span></div>
+
+      <div class="screens">
+        <!-- 我的页 -->
+        <div class="screen" id="screen-me">
+          <h1 class="visually-hidden">我的</h1>
+
+          <!-- 当前子女信息 -->
+          <div class="me-head">
+            <div class="ma">👩</div>
+            <div>
+              <div class="mn">丁嘉怡</div>
+              <div class="mi">王秀兰奶奶的孙女 · 吉林大学</div>
+            </div>
+          </div>
+
+          <!-- 老人档案 -->
+          <h2 class="section-title">📋 老人档案</h2>
+          <section class="profile-card">
+            <div class="profile-row"><span class="k">姓名</span><span class="v">王秀兰</span></div>
+            <div class="profile-row"><span class="k">年龄</span><span class="v">72岁</span></div>
+            <div class="profile-row"><span class="k">病史</span><span class="v">高血压（10年）、轻度骨质疏松</span></div>
+            <div class="profile-row"><span class="k">常用药</span><span class="v">降压药（氨氯地平）每日1次</span></div>
+            <div class="profile-row"><span class="k">过敏史</span><span class="v">青霉素过敏</span></div>
+            <div class="profile-row"><span class="k">紧急联系人</span><span class="v">丁嘉怡（孙女）138****8888</span></div>
+          </section>
+
+          <!-- 家庭成员 -->
+          <h2 class="section-title">👨‍👩‍👧 家庭成员</h2>
+          <div class="mem-card">
+            <div class="av">👩</div>
+            <div class="info">
+              <div class="nm">丁嘉怡</div>
+              <div class="rel">孙女 · 吉林大学</div>
+              <div class="rel">📞 最后通话：昨天 20:00</div>
+            </div>
+          </div>
+          <div class="mem-card">
+            <div class="av">👨</div>
+            <div class="info">
+              <div class="nm">丁建国</div>
+              <div class="rel">儿子 · 北京</div>
+              <div class="rel">📞 最后通话：3天前</div>
+            </div>
+          </div>
+          <div class="mem-card">
+            <div class="av">👴</div>
+            <div class="info">
+              <div class="nm">丁爷爷</div>
+              <div class="rel">已故 · 2024年3月</div>
+              <div class="note">⚠️ 奶奶偶尔会想念，不要主动提起</div>
+            </div>
+          </div>
+
+          <!-- 爱好与习惯 -->
+          <h2 class="section-title">🎯 爱好与习惯</h2>
+          <section class="card hobby-tags" id="hobbyTags">
+            <span class="chip">🎭 看京剧</span>
+            <span class="chip">🌷 种花</span>
+            <span class="chip">🚶‍♀️ 散步</span>
+            <span class="chip">🌅 早睡早起</span>
+            <span class="chip">📺 每天18:00看新闻联播</span>
+            <span class="chip">🥟 韭菜鸡蛋饺子</span>
+            <button class="chip add" id="tagAddChip" data-action="tag-open">+ 添加标签</button>
+          </section>
+
+          <!-- 重要事件 -->
+          <h2 class="section-title">📅 重要事件</h2>
+          <section class="event-list">
+            <div class="event-row"><span>🎂 奶奶生日</span><span class="ev-date">每年农历三月初三</span></div>
+            <div class="event-row"><span>💐 结婚纪念日</span><span class="ev-date">每年5月12日</span></div>
+            <div class="event-row"><span>🕯️ 丁爷爷忌日</span><span class="ev-date">每年3月15日 ⚠️不提</span></div>
+            <div class="event-row"><span>🎓 嘉怡毕业典礼</span><span class="ev-date">2026年6月28日</span></div>
+          </section>
+
+          <!-- 紧急联系人 -->
+          <h2 class="section-title">📞 紧急联系人</h2>
+          <div class="contact-item">
+            <div class="av">👩</div>
+            <div class="info">
+              <div class="nm">丁嘉怡（我自己）</div>
+              <div class="rel">138****8888</div>
+            </div>
+            <span class="role-tag primary">🥇 主要</span>
+            <button class="call-btn" data-action="call-person" data-name="丁嘉怡" aria-label="呼叫丁嘉怡">📞</button>
+          </div>
+          <div class="contact-item">
+            <div class="av">👨</div>
+            <div class="info">
+              <div class="nm">丁建国</div>
+              <div class="rel">139****9999</div>
+            </div>
+            <span class="role-tag secondary">🥈 次级</span>
+            <button class="call-btn" data-action="call-person" data-name="丁建国" aria-label="呼叫丁建国">📞</button>
+          </div>
+          <div class="contact-item">
+            <div class="av">🩺</div>
+            <div class="info">
+              <div class="nm">朝阳区社区医院（王医生）</div>
+              <div class="rel">010-6****234</div>
+            </div>
+            <span class="role-tag fallback">🥉 兜底</span>
+            <button class="call-btn" data-action="call-person" data-name="朝阳区社区医院" aria-label="呼叫朝阳区社区医院">📞</button>
+          </div>
+
+          <!-- 通知规则 -->
+          <h2 class="section-title">🔔 通知规则</h2>
+          <section class="notify-card">
+            <div class="notify-row">
+              <div class="nr-label">
+                🔴 预警立即通知
+                <div class="nr-desc">严重预警时AI电话+短信通知</div>
+              </div>
+              <div class="toggle on" data-key="urgent" role="switch" aria-checked="true" aria-label="预警立即通知"></div>
+            </div>
+            <div class="notify-row">
+              <div class="nr-label">
+                📊 每日健康报告
+                <div class="nr-desc">每天20:00推送当日健康摘要</div>
+              </div>
+              <div class="toggle on" data-key="report" role="switch" aria-checked="true" aria-label="每日健康报告"></div>
+            </div>
+            <div class="notify-row">
+              <div class="nr-label">
+                ⚠️ 异常行为提醒
+                <div class="nr-desc">发呆、活动量骤降等异常推送</div>
+              </div>
+              <div class="toggle on" data-key="behavior" role="switch" aria-checked="true" aria-label="异常行为提醒"></div>
+            </div>
+            <div class="notify-row">
+              <div class="nr-label">
+                💊 吃药提醒同步
+                <div class="nr-desc">老人吃药后同步通知子女</div>
+              </div>
+              <div class="toggle on" data-key="medicine" role="switch" aria-checked="true" aria-label="吃药提醒同步"></div>
+            </div>
+          </section>
+
+          <!-- 小暖人设 -->
+          <h2 class="section-title">🤖 小暖人设</h2>
+          <section class="persona-card">
+            <div class="row"><span class="k">当前人设</span><span class="v" id="pCur">温柔耐心孙女</span></div>
+            <div class="row"><span class="k">称呼方式</span><span class="v" id="pCall">奶奶</span></div>
+            <div class="row"><span class="k">性格风格</span><span class="v" id="pChar">温柔耐心，像亲孙女</span></div>
+            <div class="row"><span class="k">说话语速</span><span class="v" id="pSpeed">慢一点，咬字清楚</span></div>
+            <div class="row"><span class="k">爱聊话题</span><span class="v" id="pTopic">家常、京剧、儿孙近况</span></div>
+            <div class="row"><span class="k">禁区话题</span><span class="v" id="pSafe">丁爷爷（已故）</span></div>
+            <div class="row edit-row">
+              <span></span>
+              <button class="edit-btn" data-action="persona-open">✏️ 切换其他人设</button>
+            </div>
+          </section>
+
+          <!-- 设备管理 -->
+          <h2 class="section-title">⚙️ 设备管理</h2>
+          <section class="device-card">
+            <div class="device-row">
+              <span>⌚ 健康手环</span>
+              <span class="status online">● 在线 · 电量 72%</span>
+            </div>
+            <div class="device-row">
+              <span>📹 客厅摄像头</span>
+              <span class="status online">● 在线</span>
+            </div>
+            <div class="device-row">
+              <span>🔄 最后同步</span>
+              <span class="status">今天 15:05</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- 底部导航 -->
+      <nav class="tabbar" aria-label="主导航">
+        <a href="index.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>首页</span>
+        </a>
+        <a href="care.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span>关怀</span>
+        </a>
+        <a href="records.html" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          <span>记录</span>
+        </a>
+        <a href="me.html" data-active="true" aria-current="page" class="tab-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>我的</span>
+        </a>
+      </nav>
+
+      <!-- 演示浮动按钮 -->
+      <button class="demo-fab" data-action="demo-toggle">🎬 演示台</button>
+
+      <!-- 演示控制台 -->
+      <div class="demo-panel" id="demoPanel" data-action="overlay-close">
+        <div class="demo-sheet">
+          <h2>🎬 演示控制台</h2>
+          <p class="sub">模拟老人端检测到异常，子女端实时收到预警</p>
+          <button class="demo-btn red" data-action="scenario-heart">
+            <b>🔴 场景一：心率异常（128次/分）</b>
+            <span>老人端弹出安抚 → 子女端首页红色预警 → 弹层展示 AI 通知链路</span>
+          </button>
+          <button class="demo-btn red" data-action="scenario-fall">
+            <b>🔴 场景二：摔倒检测</b>
+            <span>老人端询问是否需要帮助 → 子女端收到紧急预警</span>
+          </button>
+          <button class="demo-btn red" data-action="scenario-bp">
+            <b>🟠 场景三：血压偏高（158/95）</b>
+            <span>老人端提醒静坐 → 子女端检测卡片变红</span>
+          </button>
+          <button class="demo-btn" data-action="scenario-conv">
+            <b>💬 场景四：新对话记录</b>
+            <span>陪伴页出现一条新对话，带心情标签和AI分析</span>
+          </button>
+          <button class="demo-btn" data-action="scenario-alert">
+            <b>🟠 场景五：新增预警记录</b>
+            <span>健康页预警记录新增一条异常事件</span>
+          </button>
+          <button class="demo-btn red" data-action="reset-demo">
+            <b>↺ 重置演示数据</b>
+            <span>恢复初始状态</span>
+          </button>
+          <button class="demo-close" data-action="demo-close">关 闭</button>
+        </div>
+      </div>
+
+      <!-- 红色预警弹层 -->
+      <div class="alert-overlay" id="alertOverlay" data-action="overlay-close">
+        <div class="alert-box">
+          <div class="ico" id="alertIcon">❤️‍🔥</div>
+          <h2 id="alertTitle">严重预警</h2>
+          <div class="hr" id="alertBody">奶奶心率 <b>128</b> 次/分</div>
+          <p class="alt-time" id="alertTime">15:05 触发 · 已超时 5 分钟</p>
+          <ol class="steps">
+            <li><span class="n">1</span><span>小暖正在安抚奶奶，指导静坐深呼吸</span></li>
+            <li><span class="n">2</span><span>AI 已自动拨打您和建国电话，未接听</span></li>
+            <li><span class="n">3</span><span>已发送短信通知</span></li>
+            <li><span class="n">4</span><span>请立即处理！</span></li>
+          </ol>
+          <div class="call-note">
+            📞 已尝试联系主要 + 次级联系人（均未接听）<br>
+            ⏰ 即将升级至兜底联系人：朝阳区社区医院
+          </div>
+          <div class="actions">
+            <button class="call" data-action="call-open">📞 查看 AI 电话通知流程</button>
+            <button class="ok-btn" data-action="alert-ok">✅ 我已联系奶奶，处理完毕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI 电话流程弹层 -->
+      <div class="ai-call-modal" id="aiCallModal" data-action="overlay-close">
+        <div class="ai-call-box">
+          <h2>📞 AI 电话通知流程</h2>
+          <p class="sub">严重预警自动触发 · 按层级拨打紧急联系人</p>
+          <ol class="call-flow">
+            <li><span class="step done">1</span><span class="step-text">主要联系人 丁嘉怡</span><span class="step-status">未接听</span></li>
+            <li><span class="step done">2</span><span class="step-text">次级联系人 丁建国</span><span class="step-status">未接听</span></li>
+            <li><span class="step active" id="callStep3">3</span><span class="step-text">兜底 朝阳区社区医院</span><span class="step-status" id="callStatus3">待拨打</span></li>
+          </ol>
+          <p class="call-status" id="callStatus">⏳ 正在拨打中……</p>
+          <button class="close-btn" data-action="call-close">关 闭</button>
+        </div>
+      </div>
+
+      <!-- 小暖人设选择弹层 -->
+      <div class="sheet-overlay" id="personaSheet" data-action="overlay-close">
+        <div class="sheet">
+          <h3>🤖 切换小暖人设</h3>
+          <p class="sub">选择适合奶奶的陪伴风格，小暖将按新风格与奶奶交流</p>
+          <button class="persona-option" data-id="gentle" data-action="persona-select">
+            <span class="p-ico">👧</span>
+            <span class="p-txt">
+              <span class="p-name">温柔耐心孙女</span>
+              <span class="p-desc">称呼“奶奶”，温柔耐心像亲孙女，语速放慢、咬字清楚</span>
+            </span>
+            <span class="p-check">✓</span>
+          </button>
+          <button class="persona-option" data-id="humor" data-action="persona-select">
+            <span class="p-ico">👴</span>
+            <span class="p-txt">
+              <span class="p-name">幽默唠嗑老友</span>
+              <span class="p-desc">称呼“王大姐”，风趣幽默爱开玩笑，语速适中</span>
+            </span>
+            <span class="p-check">✓</span>
+          </button>
+          <button class="persona-option" data-id="health" data-action="persona-select">
+            <span class="p-ico">🧑‍⚕️</span>
+            <span class="p-txt">
+              <span class="p-name">沉稳健康管家</span>
+              <span class="p-desc">称呼“王阿姨”，简洁专业有条理，按时提醒起居用药</span>
+            </span>
+            <span class="p-check">✓</span>
+          </button>
+          <div class="sheet-actions">
+            <button class="cancel" data-action="persona-close">取 消</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 添加标签弹层 -->
+      <div class="sheet-overlay" id="tagSheet" data-action="overlay-close">
+        <div class="sheet">
+          <h3>🏷 添加爱好标签</h3>
+          <p class="sub">添加奶奶的新爱好或习惯，小暖将更懂她</p>
+          <input class="tag-input" id="tagInput" type="text" placeholder="例如：听评书、养金鱼…" maxlength="12">
+          <div class="sheet-actions">
+            <button class="cancel" data-action="tag-cancel">取 消</button>
+            <button class="confirm" data-action="tag-confirm">添 加</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast -->
+      <div class="toast-wrap" id="toastWrap"></div>
+    </div>
+  </div>
+
+  <script src="assets/bridge.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

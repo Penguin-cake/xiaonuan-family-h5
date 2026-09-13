@@ -97,7 +97,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, [role="button"]:focu
 .showcase { display: contents; }
 .side-panel { display: none; }
 @media (min-width: 1120px) {
-  .showcase { display: flex; align-items: center; justify-content: center; gap: 72px; padding: 24px; }
+  .showcase { display: flex; align-items: center; justify-content: center; gap: 72px; padding: 24px; flex-wrap: wrap; }
+  /* 固定手机壳宽度，打破 flex 循环依赖（防止宽屏下手机壳被压缩折叠） */
+  .phone { flex: 0 0 430px; width: 430px; }
   .side-panel { display: block; max-width: 340px; }
   .side-panel .brand-logo {
     width: 64px; height: 64px; border-radius: 20px; margin-bottom: 22px;

@@ -81,7 +81,8 @@
   }
   setInterval(checkOnline, 3000);
   checkOnline();
-  addLog('sys', '操作台就绪：请在新标签页打开老人端与子女端');
+  addLog('sys', '操作台就绪：房间号 ' + (XNB ? XNB.room : '默认') + '（同房间三端可跨设备联动）');
+  addLog('sys', '请在新标签页或其他设备（手机）打开老人端与子女端');
 
   /* ---------- 按钮 ---------- */
   document.addEventListener('click', function (e) {
